@@ -16,8 +16,8 @@ import scala.util.parsing.input.CharSequenceReader
  */
 object CacheDirectiveParser {
 
-  def parse(headers: Seq[String]): collection.immutable.Seq[CacheDirective] = {
-    headers.flatMap(parse).to[collection.immutable.Seq]
+  def parse(headers: collection.Seq[String]): collection.immutable.Seq[CacheDirective] = {
+    headers.flatMap(parse).toList
   }
 
   def parse(header: String): collection.immutable.Seq[CacheDirective] = {
